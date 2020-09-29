@@ -11,12 +11,10 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
+  testProject: '**/*Test/*.csproj'
 
 steps:
-- task: DotNetCoreCLI@2
-  inputs:
-    command: test
-    projects: '**/*Test/*.csproj'
-    arguments: '--configuration $(buildConfiguration)'
+- script: dotnet test $(testProject) --configuration $(buildConfiguration)
+  displayName: 'dotnet test $(buildConfiguration)'
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
