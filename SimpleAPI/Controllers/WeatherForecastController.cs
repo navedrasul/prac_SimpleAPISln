@@ -39,8 +39,7 @@ namespace SimpleAPI.Controllers
         [HttpGet]
         public string Get()
         {
-            //return "Naved Rasul";
-            return "Arif BiLlah";
+            return "Naved Rasul";
         }
     }
 }
